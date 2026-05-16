@@ -204,14 +204,13 @@ button:hover{
     </div>
 
      <div class="form-group">
-      <label>No WhatsApp</label>
+      <label>WhatsApp</label>
       <input type="number" id="whatsapp" required>
     </div>
 
      <div class="form-group">
       <label>Tanggal</label>
       <input type="date" id="tanggal" required>
-      <input type="time" id="time" required>
     </div>
     <div class="form-group">
       <label>Jam</label>
