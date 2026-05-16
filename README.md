@@ -1,1 +1,322 @@
 # sow-dps1-bali
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Order</title>
+</head>
+<style>
+body{
+    margin:0;
+    padding:20px;
+    background:#6187ee;
+    font-family:Arial, sans-serif;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+    max-width:500px;
+    margin:auto;
+    background:#ffffff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   JUDUL
+========================= */
+h2{
+    text-align:center;
+    color:#333;
+    margin-bottom:25px;
+}
+
+/* =========================
+   FORM GROUP
+========================= */
+.form-group{
+    margin-bottom:18px;
+}
+
+/* =========================
+   LABEL
+========================= */
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#444;
+}
+
+/* =========================
+   INPUT & SELECT
+========================= */
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:14px;
+    box-sizing:border-box;
+    outline:none;
+    transition:0.3s;
+}
+
+/* =========================
+   FOCUS EFFECT
+========================= */
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#25D366;
+    box-shadow:0 0 5px rgba(37,211,102,0.4);
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+/* =========================
+   ORDER BOX
+========================= */
+.order-box{
+    background:#f9f9f9;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+    text-align:center;
+    border:1px dashed #25D366;
+}
+
+/* =========================
+   KODE ORDER
+========================= */
+#kode{
+    font-size:24px;
+    font-weight:bold;
+    color:#25D366;
+    margin:10px 0;
+}
+
+/* =========================
+   BUTTON
+========================= */
+button{
+    width:100%;
+    padding:14px;
+    background:#25D366;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* =========================
+   BUTTON HOVER
+========================= */
+button:hover{
+    background:#128C7E;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+.success{
+    margin-top:15px;
+    text-align:center;
+    color:green;
+    font-weight:bold;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media(max-width:600px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        padding:18px;
+    }
+
+    button{
+        font-size:14px;
+    }
+
+}</style>
+<body>
+
+<div class="container">
+
+  <h7>FORM ORDER SOW DENPASAR</h7>
+
+  <form id="orderForm">
+
+    <div class="form-group">
+      <label>Nama</label>
+      <input type="text" id="nama" required>
+    </div>
+<div class="form-group">
+      <label>NIP ID</label>
+      <input type="number" id="nip" name="angka">
+    </div>
+
+    <div class="form-group">
+      <label>Kode Cabang</label>
+      
+      <select id="cabang">
+        <dropdown>
+        <option>D05248-DENPASAR UTARA</option>
+        <option>D05249-DENPASAR TIMUR</option>
+        <option>D05250-DENPASAR SELATAN</option>
+        <option>D05251-DENPASAR BARAT</option>
+        <option>D05252-DENPASAR KOTA</option>
+        <option>D05253-DENPASAR KUTA</option>
+        </dropdown>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>JENIS KENDALA</label>
+      <select id="kendala">
+        <option>Kendala Teknis</option>
+        <option>Kendala Administrasi</option>
+        <option>Kendala Logistik</option>
+        <option>Kendala Lainnya</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Deskripsi</label>
+      <textarea id="deskripsi"></textarea>
+    </div>
+
+     <div class="form-group">
+      <label>No WhatsApp</label>
+      <input type="number" id="whatsapp" required
+    </div>
+
+     <div class="form-group">
+      <label>Tanggal</label>
+      <input type="date" id="tanggal" required>
+    </div>  <div class="form-group">
+      <label>Jam</label>
+      <input type="time_auto" id="jam" required>
+    </div>
+
+    <div class="order-box">
+        <h9>Kode:</h9>
+        <p id="kode">Memuat...</p>
+        <p style="font-size: 12px; color: gray;"></p>
+        <p style="text-align: center; font-size: 12px; color: gray;">Silakan simpan order dan kirim ke grup WhatsApp</p>
+    </div>
+ <script>
+        function generateOrderNumber() {
+            // Membuat awalan (misal: SOW-)
+            const prefix = "SOW-";
+            
+            // Membuat angka acak 6 digit (contoh: 100000 - 999999)
+            const randomNum = Math.floor(100000 + Math.random() * 900000);
+            
+            // Menggabungkan prefix dan angka
+            const finalOrder = prefix + randomNum;
+            
+            // Menampilkan di elemen HTML
+            document.getElementById("kode").innerText = finalOrder;
+        }
+
+        // Jalankan fungsi saat halaman dimuat
+        window.onload = generateOrderNumber;
+    </script>
+
+    <button onclick="kirimWhatsApp()" type="button">
+      SAVE and SEND to WhatsApp
+      </button>
+    <div class="success" id="success"></div>
+  </form>
+
+</div>
+<script>
+    const scriptURL ="https://script.google.com/macros/s/AKfycby7Qp-gxTXZ-ZsgVjfY63yoDgKrJSbgp0NKNbxFXO7kRDSSEF7pnFGHDv0M5shtmLT8iA/exec";
+const form = document.getElementById('orderForm');
+
+form.addEventListener('submit', e => {
+
+  e.preventDefault();
+
+  const data = {
+    nama: document.getElementById('nama').value,
+    nip: document.getElementById('nip').value,
+    cabang: document.getElementById('cabang').value,
+    kendala: document.getElementById('kendala').value,
+    deskripsi: document.getElementById('deskripsi').value,
+    whatsapp: document.getElementById('whatsapp').value,
+    tanggal: document.getElementById('tanggal').value,
+    jam: document.getElementById('jam').value,
+    kode: document.getElementById('kode').innerText
+  };
+
+  fetch(scriptURL, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    document.getElementById('success').innerHTML =
+      'Order berhasil disimpan!';
+
+    form.reset();
+  })
+  .catch(error => {
+    alert('Gagal menyimpan data');
+  });
+
+});
+
+    function kirimWhatsApp(){
+
+  let nama = document.getElementById("nama").value;
+  let nip = document.getElementById("nip").value;
+  let cabang = document.getElementById("cabang").value;
+  let kendala = document.getElementById("kendala").value;
+  let deskripsi = document.getElementById("deskripsi").value;
+  let whatsapp = document.getElementById("whatsapp").value;
+  let tanggal = document.getElementById("tanggal").value;
+  let jam = document.getElementById("jam").value;
+  let kodeOrder = document.getElementById("kode").innerText;
+
+  let nomorAdmin = '6281246443838';
+
+   let pesan =
+`Halo Admin,%0A%0ASaya ingin order:%0A%0A
+Nama: ${nama}%0A
+NIP: ${nip}%0A
+Kode Cabang: ${cabang}%0A
+Jenis Kendala: ${kendala}%0A
+Deskripsi: ${deskripsi}%0A
+No WhatsApp: ${whatsapp}%0A
+Tanggal: ${tanggal}%0A
+Jam: ${jam}%0A
+Kode Order: ${kodeOrder}`;
+
+  let admiWa = 'https://wa.me/' + nomorAdmin + '?text=' + pesan;
+  window.open(admiWa,'_blank');
+}
+
+</script>
+
+</body>
+</html>
