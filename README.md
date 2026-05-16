@@ -206,7 +206,7 @@ button:hover{
 
      <div class="form-group">
       <label>No WhatsApp</label>
-      <input type="number" id="whatsapp" required
+      <input type="number" id="whatsapp" required>
     </div>
 
      <div class="form-group">
