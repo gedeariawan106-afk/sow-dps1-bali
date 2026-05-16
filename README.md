@@ -215,7 +215,7 @@ button:hover{
     </div>
     <div class="form-group">
       <label>Jam</label>
-      <input type="time_auto" id="jam" required>
+      <input type="time" id="jam" required>
     </div>
 
     <div class="order-box">
