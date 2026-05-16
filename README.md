@@ -1,4 +1,3 @@
-# sow-dps1-bali
 <!DOCTYPE html>
 <html lang="id">
 <head>
