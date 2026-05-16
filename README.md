@@ -250,7 +250,7 @@ button:hover{
 
 </div>
 <script>
-    const scriptURL ="https://script.google.com/macros/s/AKfycby7Qp-gxTXZ-ZsgVjfY63yoDgKrJSbgp0NKNbxFXO7kRDSSEF7pnFGHDv0M5shtmLT8iA/exec";
+    const scriptURL ="https://script.google.com/macros/s/AKfycbzHNLIikVGtlaPY79o99FxSvUMS8ru8QZKPdI59JkzgyB3d3UmL0EhOUHPXBgD7JOPSOQ/exec";
 const form = document.getElementById('orderForm');
 
 form.addEventListener('submit', e => {
