@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -212,7 +211,9 @@ button:hover{
      <div class="form-group">
       <label>Tanggal</label>
       <input type="date" id="tanggal" required>
-    </div>  <div class="form-group">
+      <input type="time" id="time" required>
+    </div>
+    <div class="form-group">
       <label>Jam</label>
       <input type="time_auto" id="jam" required>
     </div>
