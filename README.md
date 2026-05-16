@@ -212,12 +212,10 @@ button:hover{
      <div class="form-group">
       <label>Tanggal</label>
       <input type="date" id="tanggal" required>
-    </div>
-    <div class="form-group">
-      <label>Jam</label>
+       <label>Jam</label>
       <input type="time" id="jam" required>
     </div>
-
+   
     <div class="order-box">
         <h9>Kode:</h9>
         <p id="kode">Memuat...</p>
@@ -251,7 +249,7 @@ button:hover{
 
 </div>
 <script>
-    const scriptURL ="https://script.google.com/macros/s/AKfycbzHNLIikVGtlaPY79o99FxSvUMS8ru8QZKPdI59JkzgyB3d3UmL0EhOUHPXBgD7JOPSOQ/exec";
+    const scriptURL ="https://script.google.com/macros/s/AKfycbxVEuuDJqTJ0P4IES8ueZr6HAsEULd2rfrkd1Eefx8pEVdN2ABBXhSbRXnCVgzk0vtc/exec";
 const form = document.getElementById('orderForm');
 
 form.addEventListener('submit', e => {
